@@ -1,3 +1,4 @@
+package sliding_window;
 import java.util.HashMap;
 
 public class Fruits_into_basket {
