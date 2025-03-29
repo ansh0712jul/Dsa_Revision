@@ -1,0 +1,7 @@
+package tree;
+public class BinaryTree_Client {
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.Display();
+    }
+}
