@@ -8,23 +8,26 @@ public class Construct_String_from_Binary_Tree {
 
 class Solution {
     public String tree2str(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        buildString(root, sb);
+        return sb.toString();
+    }
 
-        
+    private void buildString(TreeNode root, StringBuilder sb) {
+        if (root == null) return;
 
-        if(root == null) return "";
-        
-        String ans = Integer.toString(root.val);
-        String left = tree2str(root.left);
-        String right = tree2str(root.right);
+        sb.append(root.val);
 
-        if(root.left == null && root.right == null) return  ans;
+        if (root.left != null || root.right != null) {
+            sb.append('(');
+            buildString(root.left, sb);
+            sb.append(')');
+        }
 
-        if(root.left == null) return ans + "()"+"(" + right+ ")";
-        if(root.right == null) return ans + "(" + left + ")";
-
-        
-
-         return ans + "(" + left + ")" + "(" + right + ")";
-        
+        if (root.right != null) {
+            sb.append('(');
+            buildString(root.right, sb);
+            sb.append(')');
+        }
     }
 }
