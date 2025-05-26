@@ -16,8 +16,7 @@ public class String_partitioning {
         for( int i=1; i<=ques.length(); i++){
 
             String sub = ques.substring(0 , i);
-
-            print(ques.substring(i) , ans + sub + "|");
+             print(ques.substring(i) , ans + sub + "|");
         }
 
     }
